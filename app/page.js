@@ -150,13 +150,12 @@ export default function Home() {
           </div>
           <div className="hero-meta"><span>SOUSSE, TUNISIA</span><span className="meta-divider" /><span>WEB · PYTHON · AI</span></div>
         </div>
-        <div className="hero-art" aria-label="Abstract decorative geometric artwork">
-          <div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="orbit orbit-three" />
-          <div className="art-core"><span>FD</span><i /></div>
-          <span className="art-label art-label-top">IDEAS → SYSTEMS</span>
-          <span className="art-label art-label-bottom">THINK / BUILD / REFINE</span>
-          <span className="art-cross cross-one">+</span><span className="art-cross cross-two">+</span>
-        </div>
+        <aside className="hero-note">
+          <div className="note-top"><span>FIELD NOTES / 2026</span><span>01—04</span></div>
+          <p className="note-kicker">CURRENTLY WORKING ACROSS</p>
+          <ul><li><span>01</span> Web applications</li><li><span>02</span> Python tools</li><li><span>03</span> AI integrations</li><li><span>04</span> Automation</li></ul>
+          <div className="note-bottom"><span>BASED IN SOUSSE, TN</span><span>35°49′N 10°38′E</span></div>
+        </aside>
         <div className="scroll-cue"><span /> SCROLL TO EXPLORE</div>
       </section>
 
@@ -189,7 +188,7 @@ export default function Home() {
       <section className="content-section section-wrap" id="work">
         <div className="section-index">05 / {t.workLabel}</div>
         <div className="section-heading work-heading"><h2>{t.workTitle}</h2><p>{t.workText}</p></div>
-        <div className="project-grid">{t.projects.map((project, i) => <article className="project-card" key={project[0]}><div className={"project-visual visual-" + i}><span className="project-visual-index">0{i + 1}</span><span className="project-monogram">{["SP", "PP", "OG", "BP"][i]}</span><span className="visual-caption">SELECTED PROJECT / 2026</span></div><div className="project-info"><p className="project-category">{project[1]}</p><h3>{project[0]}</h3><p className="project-description">{project[2]}</p><p className="project-stack">{project[3]}</p><div className="project-links"><a href={project[4]} target="_blank" rel="noreferrer">GitHub ↗</a>{project[5] ? <a href={project[5]} target="_blank" rel="noreferrer">Live demo ↗</a> : null}</div></div></article>)}</div>
+        <div className="project-grid">{t.projects.map((project, i) => <article className="project-card" key={project[0]}><div className={"project-visual visual-" + i}><div className="project-visual-top"><span>CASE STUDY / 0{i + 1}</span><span>2026</span></div><div className="project-visual-name">{project[0]}</div><div className="project-visual-bottom"><span>{project[1]}</span><span>↗</span></div></div><div className="project-info"><p className="project-category">{project[1]}</p><h3>{project[0]}</h3><p className="project-description">{project[2]}</p><p className="project-stack">{project[3]}</p><div className="project-links"><a href={project[4]} target="_blank" rel="noreferrer">GitHub ↗</a>{project[5] ? <a href={project[5]} target="_blank" rel="noreferrer">Live demo ↗</a> : null}</div></div></article>)}</div>
       </section>
 
       <section className="contact-section section-wrap" id="contact">
