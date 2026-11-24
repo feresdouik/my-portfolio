@@ -47,7 +47,7 @@ const copy = {
     contactLabel: "GET IN TOUCH",
     contactTitle: "Have a project in mind?",
     contactText: "If you need help with a website, a Python task, or an AI-powered prototype, I'd be glad to hear what you're working on.",
-    email: "Send me an email",
+    email: "Contact on GitHub",
     footer: "Designed and built with care.",
     backTop: "Back to top"
   },
@@ -95,7 +95,7 @@ const copy = {
     contactLabel: "PRENONS CONTACT",
     contactTitle: "Un projet en tête ?",
     contactText: "Besoin d'un site web, d'un développement Python ou d'un prototype intégrant l'IA ? Parlons de votre idée.",
-    email: "M'envoyer un email",
+    email: "Me contacter sur GitHub",
     footer: "Conçu et développé avec soin.",
     backTop: "Retour en haut"
   }
@@ -194,7 +194,7 @@ export default function Home() {
 
       <section className="contact-section section-wrap" id="contact">
         <div className="section-index">06 / {t.contactLabel}</div>
-        <div className="contact-inner"><p className="eyebrow">HAVE AN IDEA? LET'S BUILD IT.</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><a className="button button-primary contact-button" href="mailto:feresdouik@gmail.com">{t.email} <span>↗</span></a><div className="social-links"><a href="https://github.com/feresdouik" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div>
+        <div className="contact-inner"><p className="eyebrow">HAVE AN IDEA? LET'S BUILD IT.</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><a className="button button-primary contact-button" href="https://github.com/feresdouik" target="_blank" rel="noreferrer">{t.email} <span>↗</span></a><div className="social-links"><a href="https://github.com/feresdouik" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
       </section>
 
       <footer className="footer section-wrap"><a className="brand" href="#top"><span className="brand-mark">FD</span><span>Feres Douik<span className="brand-dot">.</span></span></a><p>© 2026 Feres Douik. {t.footer}</p><button onClick={() => scrollTo("top")}>{t.backTop} ↑</button></footer>
