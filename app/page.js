@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const copy = {
   en: {
-    nav: ["About", "Journey", "Skills", "Work", "Contact"],
+    nav: ["About", "Services", "Skills", "Work", "Contact"],
     eyebrow: "SOFTWARE DEVELOPER · AI & AUTOMATION",
     heroTitle: "Building useful digital experiences.",
     heroText: "I turn ideas into practical web applications, intelligent tools, and automated workflows.",
@@ -55,7 +55,7 @@ const copy = {
     backTop: "Back to top"
   },
   fr: {
-    nav: ["À propos", "Parcours", "Compétences", "Projets", "Contact"],
+    nav: ["À propos", "Services", "Compétences", "Projets", "Contact"],
     eyebrow: "DÉVELOPPEMENT LOGICIEL · IA & AUTOMATISATION",
     heroTitle: "Créer des expériences numériques utiles.",
     heroText: "Je transforme des idées en applications web pratiques, outils intelligents et processus automatisés.",
