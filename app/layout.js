@@ -3,7 +3,6 @@ import "./globals.css";
 export const metadata = {
   title: "Feres Douik — Software Developer",
   description: "Portfolio of Feres Douik — web development, Python, AI applications and automation.",
-  metadataBase: new URL("https://feresdouik.github.io"),
   openGraph: {
     title: "Feres Douik — Software Developer",
     description: "Web development, Python, AI applications and automation.",
