@@ -2,209 +2,124 @@
 
 import { useEffect, useState } from "react";
 
-const copy = {
+const content = {
   en: {
-    nav: ["About", "Services", "Skills", "Work", "Contact"],
-    eyebrow: "SOFTWARE DEVELOPER · AI & AUTOMATION",
-    heroTitle: "Building useful digital experiences.",
-    heroText: "I turn ideas into practical web applications, intelligent tools, and automated workflows.",
-    cta: "Explore my work",
-    contact: "Let's talk",
-    availability: "Open to meaningful opportunities",
-    aboutLabel: "A LITTLE ABOUT ME",
-    aboutTitle: "Technology with a practical mindset.",
-    aboutText: "I'm a developer based in Tunisia, working across web development, Python, AI-powered applications, and automation. I enjoy taking a problem from its first sketch to a working prototype — keeping the experience clear, useful, and grounded in real needs.",
-    aboutNote: "My approach is simple: understand the problem, build with purpose, and keep improving.",
-    journeyLabel: "THE JOURNEY",
-    journeyTitle: "A path shaped by making things.",
-    journeyText: "A mix of creative foundations, digital work, and hands-on software projects.",
-    journey: [
-      ["Multimedia & Web Development", "Studies focused on digital creation, web foundations, and visual communication."],
-      ["Agency Experience", "Worked on web and graphic design tasks in an agency environment."],
-      ["Baraa Voyages", "Professional experience in a travel business, learning how digital work connects with everyday operations."],
-      ["Independent Projects", "Freelance creative services and event work, alongside building software prototypes and AI-powered tools."]
-    ],
-    skillsLabel: "WHAT I WORK WITH",
-    skillsTitle: "A practical toolkit.",
-    skillsText: "Tools and technologies I use to explore ideas and build working solutions.",
-    skillGroups: [["Development", "Python", "JavaScript", "HTML & CSS", "Web development"], ["AI & Automation", "LLM integrations", "Research workflows", "API integrations", "Process automation"], ["Tools & Platforms", "Git & GitHub", "Next.js", "Streamlit", "REST APIs"]],
-    servicesLabel: "HOW I CAN HELP",
-    servicesTitle: "From a small fix to a working prototype.",
+    nav: ["Home", "About", "Services", "Projects", "Insights", "Contact"],
+    hire: "Hire Me",
+    available: "Available for selected opportunities",
+    role: "SOFTWARE DEVELOPER · PYTHON · WEB · AI",
+    headline: "Building useful digital experiences",
+    intro: "I build practical web applications, Python tools, AI-powered products, and automation workflows that solve real problems.",
+    work: "View My Work", talk: "Let's Talk", follow: "Find me on",
+    aboutTag: "ABOUT ME", aboutTitle: "Technology with a practical mindset.",
+    aboutLead: "I'm Feres Douik, a Software Developer",
+    aboutText: "Based in Sousse, Tunisia, I work across web development, Python, AI-powered applications, and automation. I enjoy turning ideas into working products, learning through hands-on projects, and keeping technology useful and accessible.",
+    aboutText2: "My background combines multimedia and web development studies, agency experience, and independent projects. I focus on clear communication, practical problem-solving, and steady improvement.",
+    skills: [["Web Development", "Intermediate"], ["Python", "Intermediate"], ["JavaScript", "Working knowledge"], ["AI & Automation", "Project experience"]],
+    stats: [["4", "PERSONAL PROJECTS"], ["3", "MAIN FOCUS AREAS"], ["TN", "BASED IN TUNISIA"]],
+    servicesTag: "WHAT I OFFER", servicesTitle: "Practical development for real needs.",
+    servicesIntro: "From a focused improvement to a complete working prototype.",
     services: [
-      ["Web Development", "Responsive websites and web applications built around real user needs."],
-      ["UI Implementation", "Turning clear designs into polished, accessible interfaces."],
-      ["Backend & APIs", "Connecting services, handling data, and building practical integrations."],
-      ["Python Development", "Custom scripts, utilities, bug fixes, and workflow automation."],
-      ["AI Integrations", "Connecting language models and external APIs to useful workflows."],
-      ["Automation", "Reducing repetitive work with reliable, maintainable processes."]
+      ["⌘", "Web Development", "Responsive websites and web applications built around real user needs.", ["Next.js", "JavaScript", "Responsive UI"]],
+      ["▣", "UI Implementation", "Turning a clear design into a polished, accessible interface.", ["Layout", "Interactions", "CSS"]],
+      ["⌁", "Backend & APIs", "Connecting services, handling data, and building useful integrations.", ["REST APIs", "Integrations", "Data"]],
+      ["Py", "Python Development", "Custom scripts, utilities, bug fixes, and practical tools.", ["Python", "Debugging", "Scripting"]],
+      ["✳", "AI Integrations", "Connecting AI models and external services to useful workflows.", ["LLM APIs", "Research", "Structured output"]],
+      ["↗", "Automation", "Reducing repetitive work with clear and maintainable processes.", ["Workflows", "Automation", "Tools"]]
     ],
-    workLabel: "SELECTED WORK",
-    workTitle: "Projects built to solve real problems.",
-    workText: "A selection of prototypes and experiments. Each project is a work in progress, built around a concrete use case.",
+    projectsTag: "SELECTED WORK", projectsTitle: "Projects built to solve real problems.",
+    projectsIntro: "A selection of independent prototypes and working experiments.",
     projects: [
-      ["StylePilot AI", "AI-powered pre-meeting research agent", "Collects relevant information about a person or organization and turns it into a structured briefing with source context.", "AI · Research · Tavily · Groq", "https://github.com/feresdouik/stylepilot-ai-research-agent", "https://stylepilot-ai.onrender.com"],
-      ["PayPilot", "AI-assisted payment operations", "A prototype exploring how small businesses can simplify payment operations through PayPal integration and AI-assisted workflows.", "Python · PayPal API · AI", "https://github.com/feresdouik/paypilot", "https://paypilot-xfcb.onrender.com"],
-      ["OrderGuard AI", "Cash-on-delivery order risk scoring", "A Streamlit prototype that applies transparent rule-based signals to help review potentially risky COD orders.", "Python · Streamlit · Risk scoring", "https://github.com/feresdouik/orderguard-ai", ""],
-      ["BizPilot AI", "Business-focused AI prototype", "An experimental AI application developed for the AMD League, exploring practical AI support for business workflows.", "AI · Prototype · AMD League", "https://github.com/feresdouik/bizpilot-ai-amd", "https://bizpilot-ai-amd.onrender.com"]
+      ["StylePilot AI", "AI RESEARCH AGENT", "A pre-meeting research agent that gathers relevant sources and turns them into a structured briefing.", "AI · Tavily · Groq", "https://github.com/feresdouik/stylepilot-ai-research-agent", "https://stylepilot-ai.onrender.com", "SP"],
+      ["PayPilot", "PAYMENT OPERATIONS", "An AI-assisted payment operations prototype built around PayPal integration and small-business workflows.", "Python · PayPal · AI", "https://github.com/feresdouik/paypilot", "https://paypilot-xfcb.onrender.com", "PP"],
+      ["OrderGuard AI", "ORDER RISK REVIEW", "A Streamlit tool that uses transparent rule-based signals to help review potentially risky COD orders.", "Python · Streamlit", "https://github.com/feresdouik/orderguard-ai", "", "OG"],
+      ["BizPilot AI", "BUSINESS AI PROTOTYPE", "An experimental AI application developed for the AMD League, exploring practical support for business workflows.", "AI · AMD League", "https://github.com/feresdouik/bizpilot-ai-amd", "https://bizpilot-ai-amd.onrender.com", "BP"]
     ],
-    contactLabel: "GET IN TOUCH",
-    contactTitle: "Have a project in mind?",
-    contactText: "If you need help with a website, a Python task, or an AI-powered prototype, I'd be glad to hear what you're working on.",
-    email: "Contact on GitHub",
-    footer: "Designed and built with care.",
-    backTop: "Back to top"
+    approachTag: "WORKING TOGETHER", approachTitle: "Clear communication. Useful outcomes.",
+    approachIntro: "A few principles I bring to every project.",
+    principles: [["01", "Understand the need", "Start with the problem, the people using the product, and the outcome that matters."], ["02", "Build with purpose", "Choose a practical approach and keep the experience straightforward."], ["03", "Improve through feedback", "Test, refine, and communicate progress clearly along the way."]],
+    insightsTag: "FROM THE WORK", insightsTitle: "A closer look at what I build.",
+    insightsIntro: "Explore the ideas and technical focus behind selected projects.",
+    insights: [["Research before the meeting", "How StylePilot AI turns scattered information into a structured briefing.", "StylePilot AI", "https://github.com/feresdouik/stylepilot-ai-research-agent"], ["Safer COD order review", "A look at the transparent signals used in the OrderGuard AI prototype.", "OrderGuard AI", "https://github.com/feresdouik/orderguard-ai"], ["Simplifying payment workflows", "Exploring PayPal integration for small-business payment operations.", "PayPilot", "https://github.com/feresdouik/paypilot"]],
+    contactTag: "GET IN TOUCH", contactTitle: "Have a project in mind?", contactText: "If you need help with a website, a Python task, or an AI-powered prototype, tell me a little about what you're building.", contactCard: "Start a conversation", contactButton: "Contact me on GitHub", location: "Sousse, Tunisia", contactNote: "GitHub is my current public contact channel.",
+    footer: "Designed and built with care.", back: "Back to top"
   },
   fr: {
-    nav: ["À propos", "Services", "Compétences", "Projets", "Contact"],
-    eyebrow: "DÉVELOPPEMENT LOGICIEL · IA & AUTOMATISATION",
-    heroTitle: "Créer des expériences numériques utiles.",
-    heroText: "Je transforme des idées en applications web pratiques, outils intelligents et processus automatisés.",
-    cta: "Découvrir mes projets",
-    contact: "Me contacter",
-    availability: "Ouvert aux opportunités pertinentes",
-    aboutLabel: "QUELQUES MOTS",
-    aboutTitle: "La technologie avec une approche concrète.",
-    aboutText: "Développeur basé en Tunisie, je travaille autour du développement web, de Python, des applications intégrant l'IA et de l'automatisation. J'aime transformer un problème en prototype fonctionnel, avec une expérience claire, utile et ancrée dans des besoins réels.",
-    aboutNote: "Mon approche : comprendre le besoin, construire avec intention et améliorer progressivement.",
-    journeyLabel: "MON PARCOURS",
-    journeyTitle: "Un parcours guidé par la création.",
-    journeyText: "Des bases créatives au travail numérique, jusqu'aux projets logiciels concrets.",
-    journey: [
-      ["Multimédia & développement web", "Études axées sur la création numérique, les bases du web et la communication visuelle."],
-      ["Expérience en agence", "Participation à des missions web et graphiques dans un environnement d'agence."],
-      ["Baraa Voyages", "Expérience professionnelle dans le secteur du voyage et découverte des besoins opérationnels quotidiens."],
-      ["Projets indépendants", "Services créatifs en freelance et organisation d'événements, en parallèle de prototypes logiciels et d'outils IA."]
-    ],
-    skillsLabel: "MES OUTILS",
-    skillsTitle: "Une boîte à outils concrète.",
-    skillsText: "Des technologies que j'utilise pour explorer des idées et construire des solutions fonctionnelles.",
-    skillGroups: [["Développement", "Python", "JavaScript", "HTML & CSS", "Développement web"], ["IA & automatisation", "Intégration de LLM", "Recherche automatisée", "Intégration d'API", "Automatisation"], ["Outils & plateformes", "Git & GitHub", "Next.js", "Streamlit", "API REST"]],
-    servicesLabel: "MES SERVICES",
-    servicesTitle: "De la correction au prototype fonctionnel.",
+    nav: ["Accueil", "À propos", "Services", "Projets", "Notes", "Contact"],
+    hire: "Me contacter", available: "Ouvert à certaines opportunités",
+    role: "DÉVELOPPEMENT LOGICIEL · PYTHON · WEB · IA",
+    headline: "Créer des expériences numériques utiles",
+    intro: "Je développe des applications web pratiques, des outils Python, des produits intégrant l'IA et des processus automatisés.",
+    work: "Voir mes projets", talk: "Parlons-en", follow: "Me retrouver",
+    aboutTag: "À PROPOS", aboutTitle: "La technologie avec une approche concrète.",
+    aboutLead: "Je suis Feres Douik, développeur logiciel",
+    aboutText: "Basé à Sousse, en Tunisie, je travaille dans le développement web, Python, les applications intégrant l'IA et l'automatisation. J'aime transformer des idées en produits fonctionnels et garder la technologie utile et accessible.",
+    aboutText2: "Mon parcours combine des études en multimédia et développement web, une expérience en agence et des projets indépendants. Je privilégie la communication claire et la résolution concrète des problèmes.",
+    skills: [["Développement web", "Intermédiaire"], ["Python", "Intermédiaire"], ["JavaScript", "Pratique"], ["IA & automatisation", "Expérience projet"]],
+    stats: [["4", "PROJETS PERSONNELS"], ["3", "DOMAINES PRINCIPAUX"], ["TN", "BASÉ EN TUNISIE"]],
+    servicesTag: "MES SERVICES", servicesTitle: "Du développement adapté aux vrais besoins.",
+    servicesIntro: "D'une amélioration ciblée à un prototype fonctionnel.",
     services: [
-      ["Développement web", "Sites et applications web adaptatifs, conçus pour répondre à de vrais besoins."],
-      ["Intégration UI", "Transformer des maquettes claires en interfaces soignées et accessibles."],
-      ["Backend & API", "Connecter des services, traiter des données et créer des intégrations utiles."],
-      ["Développement Python", "Scripts personnalisés, outils pratiques, correction de bugs et automatisation."],
-      ["Intégration IA", "Connecter des modèles IA et des API externes à des processus utiles."],
-      ["Automatisation", "Réduire les tâches répétitives avec des processus fiables et faciles à maintenir."]
+      ["⌘", "Développement web", "Sites et applications web adaptatifs, conçus pour répondre à de vrais besoins.", ["Next.js", "JavaScript", "Interface"]],
+      ["▣", "Intégration UI", "Transformer une maquette claire en interface soignée et accessible.", ["Mise en page", "Interactions", "CSS"]],
+      ["⌁", "Backend & API", "Connecter des services, traiter des données et créer des intégrations utiles.", ["API REST", "Intégrations", "Données"]],
+      ["Py", "Développement Python", "Scripts personnalisés, outils pratiques et correction de bugs.", ["Python", "Débogage", "Scripts"]],
+      ["✳", "Intégration IA", "Connecter des modèles IA et des services externes à des processus utiles.", ["API LLM", "Recherche", "Données structurées"]],
+      ["↗", "Automatisation", "Réduire les tâches répétitives avec des processus faciles à maintenir.", ["Processus", "Automatisation", "Outils"]]
     ],
-    workLabel: "PROJETS SÉLECTIONNÉS",
-    workTitle: "Des projets construits autour de vrais besoins.",
-    workText: "Une sélection de prototypes et d'expérimentations, chacun développé autour d'un cas d'utilisation concret.",
+    projectsTag: "PROJETS SÉLECTIONNÉS", projectsTitle: "Des projets construits autour de vrais problèmes.",
+    projectsIntro: "Une sélection de prototypes indépendants et d'expérimentations fonctionnelles.",
     projects: [
-      ["StylePilot AI", "Agent de recherche avant réunion", "Rassemble des informations pertinentes sur une personne ou une organisation et les transforme en briefing structuré avec contexte des sources.", "IA · Recherche · Tavily · Groq", "https://github.com/feresdouik/stylepilot-ai-research-agent", "https://stylepilot-ai.onrender.com"],
-      ["PayPilot", "Gestion des paiements assistée par IA", "Un prototype qui explore la simplification des opérations de paiement des petites entreprises via PayPal et des processus assistés par IA.", "Python · API PayPal · IA", "https://github.com/feresdouik/paypilot", "https://paypilot-xfcb.onrender.com"],
-      ["OrderGuard AI", "Évaluation du risque des commandes COD", "Un prototype Streamlit utilisant des règles transparentes pour aider à examiner les commandes à risque potentiel.", "Python · Streamlit · Scoring", "https://github.com/feresdouik/orderguard-ai", ""],
-      ["BizPilot AI", "Prototype IA orienté entreprise", "Une application expérimentale développée pour l'AMD League, autour de cas d'usage pratiques de l'IA en entreprise.", "IA · Prototype · AMD League", "https://github.com/feresdouik/bizpilot-ai-amd", "https://bizpilot-ai-amd.onrender.com"]
+      ["StylePilot AI", "AGENT DE RECHERCHE IA", "Un agent de recherche avant réunion qui rassemble des sources pertinentes dans un briefing structuré.", "IA · Tavily · Groq", "https://github.com/feresdouik/stylepilot-ai-research-agent", "https://stylepilot-ai.onrender.com", "SP"],
+      ["PayPilot", "OPÉRATIONS DE PAIEMENT", "Un prototype assisté par IA autour de l'intégration PayPal et des besoins des petites entreprises.", "Python · PayPal · IA", "https://github.com/feresdouik/paypilot", "https://paypilot-xfcb.onrender.com", "PP"],
+      ["OrderGuard AI", "ANALYSE DES COMMANDES", "Un outil Streamlit utilisant des règles transparentes pour examiner les commandes COD potentiellement risquées.", "Python · Streamlit", "https://github.com/feresdouik/orderguard-ai", "", "OG"],
+      ["BizPilot AI", "PROTOTYPE IA ENTREPRISE", "Une application expérimentale développée pour l'AMD League autour de cas d'usage pratiques de l'IA.", "IA · AMD League", "https://github.com/feresdouik/bizpilot-ai-amd", "https://bizpilot-ai-amd.onrender.com", "BP"]
     ],
-    contactLabel: "PRENONS CONTACT",
-    contactTitle: "Un projet en tête ?",
-    contactText: "Besoin d'un site web, d'un développement Python ou d'un prototype intégrant l'IA ? Parlons de votre idée.",
-    email: "Me contacter sur GitHub",
-    footer: "Conçu et développé avec soin.",
-    backTop: "Retour en haut"
+    approachTag: "COLLABORATION", approachTitle: "Communication claire. Résultats utiles.",
+    approachIntro: "Quelques principes que j'applique à chaque projet.",
+    principles: [["01", "Comprendre le besoin", "Partir du problème, des utilisateurs et du résultat attendu."], ["02", "Construire avec intention", "Choisir une approche pratique et garder une expérience simple."], ["03", "Améliorer avec les retours", "Tester, affiner et communiquer clairement l'avancement."]],
+    insightsTag: "AU CŒUR DES PROJETS", insightsTitle: "Découvrir ce que je construis.",
+    insightsIntro: "Les idées et les choix techniques derrière quelques projets.",
+    insights: [["Rechercher avant une réunion", "Comment StylePilot AI transforme des informations dispersées en briefing structuré.", "StylePilot AI", "https://github.com/feresdouik/stylepilot-ai-research-agent"], ["Examiner les commandes COD", "Les signaux transparents utilisés dans le prototype OrderGuard AI.", "OrderGuard AI", "https://github.com/feresdouik/orderguard-ai"], ["Simplifier les paiements", "Explorer l'intégration PayPal pour les opérations des petites entreprises.", "PayPilot", "https://github.com/feresdouik/paypilot"]],
+    contactTag: "CONTACT", contactTitle: "Un projet en tête ?", contactText: "Besoin d'un site web, d'une tâche Python ou d'un prototype intégrant l'IA ? Présentez-moi votre idée.", contactCard: "Commençons une discussion", contactButton: "Me contacter sur GitHub", location: "Sousse, Tunisie", contactNote: "GitHub est actuellement mon canal de contact public.",
+    footer: "Conçu et développé avec soin.", back: "Retour en haut"
   }
 };
-
-const navIds = ["about", "services", "skills", "work", "contact"];
 
 export default function Home() {
   const [lang, setLang] = useState("en");
   const [theme, setTheme] = useState("dark");
   const [menuOpen, setMenuOpen] = useState(false);
-  const t = copy[lang];
-
+  const t = content[lang];
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("portfolio-theme");
-    if (savedTheme === "light" || savedTheme === "dark") setTheme(savedTheme);
+    const saved = window.localStorage.getItem("portfolio-theme");
+    if (saved === "light" || saved === "dark") setTheme(saved);
   }, []);
-
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem("portfolio-theme", theme);
   }, [theme]);
-
-  function scrollTo(id) {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
-  }
-
-  return (
-    <main className="site-shell">
-      <header className="topbar">
-        <a className="brand" href="#top" aria-label="Home"><span className="brand-mark">FD</span><span>Feres Douik<span className="brand-dot">.</span></span></a>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">☰</button>
-        <nav className={menuOpen ? "nav-links nav-open" : "nav-links"}>
-          {t.nav.map((item, i) => <button key={item} onClick={() => scrollTo(navIds[i])}>{item}</button>)}
-        </nav>
-        <div className="top-actions">
-          <button className="text-control" onClick={() => setLang(lang === "en" ? "fr" : "en")}>{lang.toUpperCase()} <span>↔</span> {lang === "en" ? "FR" : "EN"}</button>
-          <button className="theme-toggle" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Toggle color theme">{theme === "dark" ? "☼" : "☾"}</button>
-        </div>
-      </header>
-
-      <section className="hero section-wrap" id="top">
-        <div className="hero-copy">
-          <div className="status-line"><span className="status-dot" />{t.availability}</div>
-          <p className="eyebrow">{t.eyebrow}</p>
-          <h1>{t.heroTitle.split(" ").slice(0, -1).join(" ")} <span>{t.heroTitle.split(" ").slice(-1)}</span></h1>
-          <p className="hero-description">{t.heroText}</p>
-          <div className="hero-actions">
-            <button className="button button-primary" onClick={() => scrollTo("work")}>{t.cta} <span>↗</span></button>
-            <button className="button button-quiet" onClick={() => scrollTo("contact")}>{t.contact} <span>→</span></button>
-          </div>
-          <div className="hero-meta"><span>SOUSSE, TUNISIA</span><span className="meta-divider" /><span>WEB · PYTHON · AI</span></div>
-        </div>
-        <div className="hero-portrait">
-          <div className="portrait-orbit orbit-a"></div><div className="portrait-orbit orbit-b"></div>
-          <div className="portrait-circle"><span>FD</span><small>SOFTWARE<br/>DEVELOPER</small></div>
-          <div className="floating-code"><div className="code-dots"><i></i><i></i><i></i></div><span>const developer = &#123;</span><b> name: "Feres",</b><b> focus: "Software",</b><b> based: "Tunisia"</b><span>&#125;;</span></div>
-          <div className="float-chip chip-left">Python · AI</div><div className="float-chip chip-right">Web Dev ↗</div>
-          <div className="float-chip chip-bottom">Building useful things</div>
-        </div>
-        <div className="scroll-cue"><span /> SCROLL TO EXPLORE</div>
-      </section>
-
-      <section className="content-section section-wrap" id="about">
-        <div className="section-index">01 / {t.aboutLabel}</div>
-        <div className="about-grid">
-          <div className="about-photo"><div className="about-initials">FD</div><span className="photo-caption">FERES DOUIK · SOUSSE, TUNISIA</span><span className="photo-stamp">01 / ABOUT</span></div>
-          <div className="about-copy"><h2>{t.aboutTitle}</h2><h3>I'm Feres Douik, a Software Developer</h3><p>{t.aboutText}</p><p className="about-note">{t.aboutNote}</p><div className="about-signature">Feres <span>Douik</span></div></div>
-        </div>
-        <div className="about-stats"><div><b>4+</b><span>PERSONAL PROJECTS</span></div><div><b>3</b><span>CORE FOCUS AREAS</span></div><div><b>∞</b><span>IDEAS TO BUILD</span></div><div><b>TN</b><span>BASED IN TUNISIA</span></div></div>
-      </section>
-
-      <section className="content-section section-wrap" id="journey">
-        <div className="section-index">02 / {t.journeyLabel}</div>
-        <div className="section-heading"><h2>{t.journeyTitle}</h2><p>{t.journeyText}</p></div>
-        <div className="timeline">{t.journey.map((item, i) => <article className="timeline-item" key={item[0]}><div className="timeline-count">0{i + 1}</div><div className="timeline-marker"><span /></div><div className="timeline-content"><h3>{item[0]}</h3><p>{item[1]}</p></div></article>)}</div>
-      </section>
-
-      <section className="content-section section-wrap" id="skills">
-        <div className="section-index">03 / {t.skillsLabel}</div>
-        <div className="section-heading"><h2>{t.skillsTitle}</h2><p>{t.skillsText}</p></div>
-        <div className="skill-grid">{t.skillGroups.map((group, i) => <article className="skill-card" key={group[0]}><span className="card-number">0{i + 1}</span><h3>{group[0]}</h3><div className="skill-tags">{group.slice(1).map(skill => <span key={skill}>{skill}</span>)}</div></article>)}</div>
-      </section>
-
-      <section className="content-section section-wrap" id="services">
-        <div className="section-index">04 / {t.servicesLabel}</div>
-        <div className="section-heading centered"><h2>{t.servicesTitle}</h2><p>Practical support from the first idea to a working result.</p></div>
-        <div className="service-grid">{t.services.map((service, i) => <article className={"service-card service-" + i} key={service[0]}><span className="service-icon">{["⌘","▣","⌁","Py","✳","↗"][i]}</span><h3>{service[0]}</h3><p>{service[1]}</p><a href="#contact">Learn more ↗</a></article>)}</div>
-      </section>
-
-      <section className="content-section section-wrap" id="work">
-        <div className="section-index">05 / {t.workLabel}</div>
-        <div className="section-heading centered work-heading"><h2>{t.workTitle}</h2><p>{t.workText}</p></div>
-        <div className="project-grid">{t.projects.map((project, i) => <article className="project-card" key={project[0]}><div className={"project-visual visual-" + i}><div className="project-visual-top"><span>PROJECT / 0{i + 1}</span><span>FERES DOUIK</span></div><div className="project-visual-name">{project[0]}</div><div className="project-visual-bottom"><span>{project[3]}</span><span>↗</span></div></div><div className="project-info"><p className="project-category">{project[1]}</p><h3>{project[0]}</h3><p className="project-description">{project[2]}</p><div className="project-links"><a href={project[4]} target="_blank" rel="noreferrer">GitHub ↗</a>{project[5] ? <a href={project[5]} target="_blank" rel="noreferrer">Live demo ↗</a> : null}</div></div></article>)}</div>
-      </section>
-
-      <section className="contact-section section-wrap" id="contact">
-        <div className="contact-title"><div className="section-index">06 / {t.contactLabel}</div><p className="eyebrow">HAVE AN IDEA? LET'S BUILD IT.</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div className="social-links"><a href="https://github.com/feresdouik" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
-        <div className="contact-panel"><div className="contact-panel-head"><span>PROJECT ENQUIRY</span><span>↗</span></div><p>Start a conversation</p><a className="button button-primary contact-button" href="https://github.com/feresdouik" target="_blank" rel="noreferrer">{t.email} <span>↗</span></a><small>GitHub is the current public contact channel.</small></div>
-      </section>
-
-      <footer className="footer section-wrap"><a className="brand" href="#top"><span className="brand-mark">FD</span><span>Feres Douik<span className="brand-dot">.</span></span></a><p>© 2026 Feres Douik. {t.footer}</p><button onClick={() => scrollTo("top")}>{t.backTop} ↑</button></footer>
-    </main>
-  );
+  const go = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setMenuOpen(false); };
+  return <main className="site-shell" id="home">
+    <header className="topbar">
+      <a className="brand" href="#home"><span className="brand-mark">FD</span><span>Feres Douik<span className="brand-dot">.</span></span></a>
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">☰</button>
+      <nav className={menuOpen ? "nav-links nav-open" : "nav-links"}>{t.nav.map((item, i) => <button key={item} onClick={() => go(["home","about","services","projects","insights","contact"][i])}>{item}</button>)}</nav>
+      <div className="top-actions"><button className="hire-button" onClick={() => go("contact")}>{t.hire} ↗</button><button className="text-control" onClick={() => setLang(lang === "en" ? "fr" : "en")}>{lang.toUpperCase()} / {lang === "en" ? "FR" : "EN"}</button><button className="theme-toggle" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Toggle theme">{theme === "dark" ? "☼" : "☾"}</button></div>
+    </header>
+    <section className="hero section-wrap">
+      <div className="hero-copy"><div className="status-line"><i />{t.available}</div><p className="eyebrow">{t.role}</p><h1>{t.headline.split(" ").slice(0,-1).join(" ")} <span>{t.headline.split(" ").slice(-1)}</span></h1><p className="hero-description">{t.intro}</p><div className="hero-tags"><span>JavaScript</span><span>Python</span><span>Next.js</span><span>AI & APIs</span></div><div className="hero-actions"><button className="button button-primary" onClick={() => go("projects")}>{t.work} ↗</button><button className="button button-quiet" onClick={() => go("contact")}>{t.talk} →</button></div><p className="hero-follow">{t.follow}: <a href="https://github.com/feresdouik" target="_blank" rel="noreferrer">GitHub ↗</a></p></div>
+      <div className="hero-visual"><div className="hero-glow" /><div className="hero-ring ring-one" /><div className="hero-ring ring-two" /><div className="hero-avatar"><span>FD</span><small>SOFTWARE<br/>DEVELOPER</small></div><div className="code-window"><div className="window-dots"><i/><i/><i/></div><code><span>const</span> developer = {"{"}<br/>&nbsp; focus: <b>"Software"</b>,<br/>&nbsp; tools: [<b>"Python"</b>, <b>"Web"</b>],<br/>&nbsp; based: <b>"Tunisia"</b><br/>{"}"};</code></div><span className="float-label label-a">Python · AI</span><span className="float-label label-b">Web apps ↗</span></div>
+    </section>
+    <section className="about-section section-wrap" id="about">
+      <div className="about-visual"><div className="about-avatar">FD</div><span className="about-image-caption">FERES DOUIK · SOUSSE, TUNISIA</span><span className="image-chip">ABOUT / 01</span></div>
+      <div className="about-content"><p className="section-kicker">{t.aboutTag}</p><h2>{t.aboutTitle}</h2><h3>{t.aboutLead}</h3><p>{t.aboutText}</p><p>{t.aboutText2}</p><div className="skill-bars">{t.skills.map(([name,level]) => <div className="skill-row" key={name}><div><b>{name}</b><span>{level}</span></div><div className="skill-track"><i /></div></div>)}</div><div className="about-stats">{t.stats.map(([value,label]) => <div key={label}><b>{value}</b><span>{label}</span></div>)}</div></div>
+    </section>
+    <section className="section-block section-wrap" id="services"><div className="section-heading"><p className="section-kicker">{t.servicesTag}</p><h2>{t.servicesTitle}</h2><p>{t.servicesIntro}</p></div><div className="services-grid">{t.services.map(([icon,title,desc,tags],i) => <article className="service-card" key={title}><span className={"service-icon service-icon-"+i}>{icon}</span><h3>{title}</h3><p>{desc}</p><div className="service-tags">{tags.map(tag => <span key={tag}>{tag}</span>)}</div></article>)}</div></section>
+    <section className="section-block section-wrap" id="projects"><div className="section-heading"><p className="section-kicker">{t.projectsTag}</p><h2>{t.projectsTitle}</h2><p>{t.projectsIntro}</p></div><div className="projects-grid">{t.projects.map(([name,category,desc,stack,repo,live,monogram],i) => <article className="project-card" key={name}><div className={"project-preview preview-"+i}><div className="preview-top"><span>FD / PROJECT 0{i+1}</span><span>↗</span></div><div className="preview-center"><span>{monogram}</span><b>{name}</b><small>{category}</small></div><div className="preview-bottom"><span>{stack}</span><span>CASE STUDY</span></div></div><div className="project-body"><p className="project-category">{category}</p><h3>{name}</h3><p>{desc}</p><div className="project-links"><a href={repo} target="_blank" rel="noreferrer">GitHub ↗</a>{live && <a href={live} target="_blank" rel="noreferrer">Live demo ↗</a>}</div></div></article>)}</div></section>
+    <section className="section-block principles-section"><div className="section-wrap"><div className="section-heading"><p className="section-kicker">{t.approachTag}</p><h2>{t.approachTitle}</h2><p>{t.approachIntro}</p></div><div className="principles-grid">{t.principles.map(([n,title,desc]) => <article key={n}><span>{n}</span><h3>{title}</h3><p>{desc}</p></article>)}</div></div></section>
+    <section className="section-block section-wrap" id="insights"><div className="section-heading"><p className="section-kicker">{t.insightsTag}</p><h2>{t.insightsTitle}</h2><p>{t.insightsIntro}</p></div><div className="insights-grid">{t.insights.map(([title,desc,tag,url],i) => <a className="insight-card" href={url} target="_blank" rel="noreferrer" key={title}><div className={"insight-art insight-art-"+i}><span>0{i+1}</span><b>{tag}</b><i>↗</i></div><div className="insight-body"><small>PROJECT NOTE · {tag.toUpperCase()}</small><h3>{title}</h3><p>{desc}</p><span>Explore project ↗</span></div></a>)}</div></section>
+    <section className="contact-section" id="contact"><div className="section-wrap contact-grid"><div><p className="section-kicker">{t.contactTag}</p><h2>{t.contactTitle}</h2><p className="contact-description">{t.contactText}</p><div className="contact-location">⌖ &nbsp;{t.location}</div></div><div className="contact-card"><div className="contact-card-top"><span>PROJECT ENQUIRY</span><span>↗</span></div><h3>{t.contactCard}</h3><a href="https://github.com/feresdouik" target="_blank" rel="noreferrer" className="button button-primary">{t.contactButton} ↗</a><p>{t.contactNote}</p></div></div></section>
+    <footer className="footer section-wrap"><a className="brand" href="#home"><span className="brand-mark">FD</span><span>Feres Douik<span className="brand-dot">.</span></span></a><p>© 2026 Feres Douik. {t.footer}</p><button onClick={() => go("home")}>{t.back} ↑</button></footer>
+  </main>;
 }
