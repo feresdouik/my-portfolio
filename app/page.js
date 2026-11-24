@@ -31,9 +31,12 @@ const copy = {
     servicesLabel: "HOW I CAN HELP",
     servicesTitle: "From a small fix to a working prototype.",
     services: [
-      ["Web development", "Responsive websites and interfaces with a focus on clarity, usability, and maintainable code."],
-      ["Python development", "Custom scripts, practical utilities, bug fixes, and workflow automation."],
-      ["AI integrations", "Connecting AI models and external APIs to solve specific, well-defined problems."]
+      ["Web Development", "Responsive websites and web applications built around real user needs."],
+      ["UI Implementation", "Turning clear designs into polished, accessible interfaces."],
+      ["Backend & APIs", "Connecting services, handling data, and building practical integrations."],
+      ["Python Development", "Custom scripts, utilities, bug fixes, and workflow automation."],
+      ["AI Integrations", "Connecting language models and external APIs to useful workflows."],
+      ["Automation", "Reducing repetitive work with reliable, maintainable processes."]
     ],
     workLabel: "SELECTED WORK",
     workTitle: "Projects built to solve real problems.",
@@ -79,9 +82,12 @@ const copy = {
     servicesLabel: "MES SERVICES",
     servicesTitle: "De la correction au prototype fonctionnel.",
     services: [
-      ["Développement web", "Sites et interfaces adaptatifs, conçus pour être clairs, pratiques et faciles à maintenir."],
+      ["Développement web", "Sites et applications web adaptatifs, conçus pour répondre à de vrais besoins."],
+      ["Intégration UI", "Transformer des maquettes claires en interfaces soignées et accessibles."],
+      ["Backend & API", "Connecter des services, traiter des données et créer des intégrations utiles."],
       ["Développement Python", "Scripts personnalisés, outils pratiques, correction de bugs et automatisation."],
-      ["Intégration IA", "Connexion de modèles IA et d'API externes pour répondre à des besoins précis."]
+      ["Intégration IA", "Connecter des modèles IA et des API externes à des processus utiles."],
+      ["Automatisation", "Réduire les tâches répétitives avec des processus fiables et faciles à maintenir."]
     ],
     workLabel: "PROJETS SÉLECTIONNÉS",
     workTitle: "Des projets construits autour de vrais besoins.",
@@ -101,7 +107,7 @@ const copy = {
   }
 };
 
-const navIds = ["about", "journey", "skills", "work", "contact"];
+const navIds = ["about", "services", "skills", "work", "contact"];
 
 export default function Home() {
   const [lang, setLang] = useState("en");
@@ -150,21 +156,23 @@ export default function Home() {
           </div>
           <div className="hero-meta"><span>SOUSSE, TUNISIA</span><span className="meta-divider" /><span>WEB · PYTHON · AI</span></div>
         </div>
-        <aside className="hero-note">
-          <div className="note-top"><span>FIELD NOTES / 2026</span><span>01—04</span></div>
-          <p className="note-kicker">CURRENTLY WORKING ACROSS</p>
-          <ul><li><span>01</span> Web applications</li><li><span>02</span> Python tools</li><li><span>03</span> AI integrations</li><li><span>04</span> Automation</li></ul>
-          <div className="note-bottom"><span>BASED IN SOUSSE, TN</span><span>35°49′N 10°38′E</span></div>
-        </aside>
+        <div className="hero-portrait">
+          <div className="portrait-orbit orbit-a"></div><div className="portrait-orbit orbit-b"></div>
+          <div className="portrait-circle"><span>FD</span><small>SOFTWARE<br/>DEVELOPER</small></div>
+          <div className="floating-code"><div className="code-dots"><i></i><i></i><i></i></div><span>const developer = &#123;</span><b> name: "Feres",</b><b> focus: "Software",</b><b> based: "Tunisia"</b><span>&#125;;</span></div>
+          <div className="float-chip chip-left">Python · AI</div><div className="float-chip chip-right">Web Dev ↗</div>
+          <div className="float-chip chip-bottom">Building useful things</div>
+        </div>
         <div className="scroll-cue"><span /> SCROLL TO EXPLORE</div>
       </section>
 
       <section className="content-section section-wrap" id="about">
         <div className="section-index">01 / {t.aboutLabel}</div>
         <div className="about-grid">
-          <h2>{t.aboutTitle}</h2>
-          <div className="about-copy"><p>{t.aboutText}</p><p className="about-note">{t.aboutNote}</p><div className="about-signature">Feres <span>Douik</span></div></div>
+          <div className="about-photo"><div className="about-initials">FD</div><span className="photo-caption">FERES DOUIK · SOUSSE, TUNISIA</span><span className="photo-stamp">01 / ABOUT</span></div>
+          <div className="about-copy"><h2>{t.aboutTitle}</h2><h3>I'm Feres Douik, a Software Developer</h3><p>{t.aboutText}</p><p className="about-note">{t.aboutNote}</p><div className="about-signature">Feres <span>Douik</span></div></div>
         </div>
+        <div className="about-stats"><div><b>4+</b><span>PERSONAL PROJECTS</span></div><div><b>3</b><span>CORE FOCUS AREAS</span></div><div><b>∞</b><span>IDEAS TO BUILD</span></div><div><b>TN</b><span>BASED IN TUNISIA</span></div></div>
       </section>
 
       <section className="content-section section-wrap" id="journey">
@@ -181,14 +189,14 @@ export default function Home() {
 
       <section className="content-section section-wrap" id="services">
         <div className="section-index">04 / {t.servicesLabel}</div>
-        <div className="section-heading"><h2>{t.servicesTitle}</h2></div>
-        <div className="service-list">{t.services.map((service, i) => <article className="service-row" key={service[0]}><span className="service-number">0{i + 1}</span><h3>{service[0]}</h3><p>{service[1]}</p><span className="service-arrow">↗</span></article>)}</div>
+        <div className="section-heading centered"><h2>{t.servicesTitle}</h2><p>Practical support from the first idea to a working result.</p></div>
+        <div className="service-grid">{t.services.map((service, i) => <article className={"service-card service-" + i} key={service[0]}><span className="service-icon">{["⌘","▣","⌁","Py","✳","↗"][i]}</span><h3>{service[0]}</h3><p>{service[1]}</p><a href="#contact">Learn more ↗</a></article>)}</div>
       </section>
 
       <section className="content-section section-wrap" id="work">
         <div className="section-index">05 / {t.workLabel}</div>
-        <div className="section-heading work-heading"><h2>{t.workTitle}</h2><p>{t.workText}</p></div>
-        <div className="project-grid">{t.projects.map((project, i) => <article className="project-card" key={project[0]}><div className={"project-visual visual-" + i}><div className="project-visual-top"><span>CASE STUDY / 0{i + 1}</span><span>2026</span></div><div className="project-visual-name">{project[0]}</div><div className="project-visual-bottom"><span>{project[1]}</span><span>↗</span></div></div><div className="project-info"><p className="project-category">{project[1]}</p><h3>{project[0]}</h3><p className="project-description">{project[2]}</p><p className="project-stack">{project[3]}</p><div className="project-links"><a href={project[4]} target="_blank" rel="noreferrer">GitHub ↗</a>{project[5] ? <a href={project[5]} target="_blank" rel="noreferrer">Live demo ↗</a> : null}</div></div></article>)}</div>
+        <div className="section-heading centered work-heading"><h2>{t.workTitle}</h2><p>{t.workText}</p></div>
+        <div className="project-grid">{t.projects.map((project, i) => <article className="project-card" key={project[0]}><div className={"project-visual visual-" + i}><div className="project-visual-top"><span>PROJECT / 0{i + 1}</span><span>FERES DOUIK</span></div><div className="project-visual-name">{project[0]}</div><div className="project-visual-bottom"><span>{project[3]}</span><span>↗</span></div></div><div className="project-info"><p className="project-category">{project[1]}</p><h3>{project[0]}</h3><p className="project-description">{project[2]}</p><div className="project-links"><a href={project[4]} target="_blank" rel="noreferrer">GitHub ↗</a>{project[5] ? <a href={project[5]} target="_blank" rel="noreferrer">Live demo ↗</a> : null}</div></div></article>)}</div>
       </section>
 
       <section className="contact-section section-wrap" id="contact">
