@@ -200,8 +200,8 @@ export default function Home() {
       </section>
 
       <section className="contact-section section-wrap" id="contact">
-        <div className="section-index">06 / {t.contactLabel}</div>
-        <div className="contact-inner"><p className="eyebrow">HAVE AN IDEA? LET'S BUILD IT.</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><a className="button button-primary contact-button" href="https://github.com/feresdouik" target="_blank" rel="noreferrer">{t.email} <span>↗</span></a><div className="social-links"><a href="https://github.com/feresdouik" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+        <div className="contact-title"><div className="section-index">06 / {t.contactLabel}</div><p className="eyebrow">HAVE AN IDEA? LET'S BUILD IT.</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div className="social-links"><a href="https://github.com/feresdouik" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+        <div className="contact-panel"><div className="contact-panel-head"><span>PROJECT ENQUIRY</span><span>↗</span></div><p>Start a conversation</p><a className="button button-primary contact-button" href="https://github.com/feresdouik" target="_blank" rel="noreferrer">{t.email} <span>↗</span></a><small>GitHub is the current public contact channel.</small></div>
       </section>
 
       <footer className="footer section-wrap"><a className="brand" href="#top"><span className="brand-mark">FD</span><span>Feres Douik<span className="brand-dot">.</span></span></a><p>© 2026 Feres Douik. {t.footer}</p><button onClick={() => scrollTo("top")}>{t.backTop} ↑</button></footer>
