@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
 :root{--bg:#0b0d0e;--surface:#111516;--surface-2:#171c1d;--text:#edf0eb;--muted:#929b96;--line:#29302e;--accent:#c7f36b;--accent-ink:#11150b;--font-body:'Manrope',Arial,sans-serif;--font-mono:'DM Mono',monospace;color-scheme:dark}
 :root[data-theme="light"]{--bg:#f4f5f0;--surface:#fff;--surface-2:#e9ece5;--text:#151a17;--muted:#66716a;--line:#d9ded6;--accent:#638b25;--accent-ink:#fff;color-scheme:light}
@@ -82,7 +82,7 @@ button{font:inherit;color:inherit}
 
 
 /* DevPort-inspired dark portfolio layout */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 :root{--bg:#111b2b;--surface:#1d2a3d;--surface-2:#24344a;--text:#f4f6fb;--muted:#aab7ca;--line:#2b3a50;--accent:#12b8e8;--accent-2:#e34dba;--accent-ink:#fff;--font-body:'Inter',Arial,sans-serif;color-scheme:dark}
 :root[data-theme="light"]{--bg:#f3f6fb;--surface:#fff;--surface-2:#e9eef7;--text:#172338;--muted:#66758b;--line:#dce4ef;--accent:#078fc3;--accent-2:#c23e9d;--accent-ink:#fff;color-scheme:light}
 body{background:radial-gradient(ellipse at 78% 13%,#263750 0,transparent 34%),linear-gradient(120deg,var(--bg),#1b293c 55%,var(--bg));font-family:var(--font-body)}
